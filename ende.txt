@@ -1,0 +1,11 @@
+tar czvf - directory | gpg --symmetric --cipher-algo aes256 -o passwordprotectedarchive.tar.gz.gpg
+It will ask you for a password.
+
+Decrypt with:
+
+gpg -d passwordprotectedarchive.tar.gz.gpg | tar xzvf -
+
+tar cz folder_to_encrypt | openssl enc -aes-256-cbc -e > out.tar.gz.enc
+compress the folder and send it to openssl for encryption, then use
+
+openssl aes-256-cbc -d -in out.tar.gz.enc -out decrypted.tar.gz
