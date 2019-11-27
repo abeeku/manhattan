@@ -1,4 +1,4 @@
-tar  --exclude='._*' cz ../SpecialOps | openssl enc -aes-256-cbc -md sha256 -e > ops.tar.gz.enc
+tar   cz --exclude='._*'../SpecialOps | openssl enc -aes-256-cbc -md sha256 -e > ops.tar.gz.enc
 git add .
 git commit -m "new load"
 git push -u origin master
